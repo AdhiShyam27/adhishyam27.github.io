@@ -9,7 +9,7 @@
       {% for slug in page.featured %}
       {% assign p = site.projects | where: "folder", slug | first %}
       <li class="accordion__panel{% if forloop.first %} is-open{% endif %}" data-panel>
-        <img class="accordion__img" src="{{ '/assets/img/projects/' | append: p.folder | append: '/01-sm.webp' | relative_url }}" srcset="{{ '/assets/img/projects/' | append: p.folder | append: '/01-sm.webp' | relative_url }} 720w, {{ '/assets/img/projects/' | append: p.folder | append: '/01.webp' | relative_url }} 1100w" sizes="(min-width: 900px) 60vw, 100vw" alt="" width="720" height="480" loading="lazy" decoding="async">
+        <img class="accordion__img" src="{{ '/assets/img/projects/' | append: p.folder | append: '/01-sm.webp' | relative_url }}" srcset="{{ '/assets/img/projects/' | append: p.folder | append: '/01-sm.webp' | relative_url }} 720w, {{ '/assets/img/projects/' | append: p.folder | append: '/01.webp' | relative_url }} 1100w" sizes="(min-width: 900px) 60vw, 90vw" alt="" width="720" height="480" loading="lazy" decoding="async">
         <button class="accordion__spine" type="button" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" data-panel-btn>
           <span class="mono">0{{ forloop.index }}</span>
           <span class="accordion__spine-title">{{ p.short_title }}</span>

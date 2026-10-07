@@ -3,7 +3,12 @@
 <meta name="theme-color" content="#f4f2ee">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+{% if page.body_class == "home" and page.hero_images %}
+  {% assign first_hero = page.hero_images | first %}
+  {% assign first_hero_sm = '/assets/img/projects/' | append: first_hero.folder | append: '/01-sm.webp' | relative_url %}
+  {% assign first_hero_lg = '/assets/img/projects/' | append: first_hero.folder | append: '/01.webp' | relative_url %}
+<link rel="preload" as="image" href="{{ first_hero_sm }}" imagesrcset="{{ first_hero_sm }} 720w, {{ first_hero_lg }} 1100w" imagesizes="(min-width: 900px) 46vw, 90vw">
+{% endif %}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

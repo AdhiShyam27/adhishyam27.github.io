@@ -4,12 +4,12 @@
   <div class="wrap hero__grid">
     <div class="hero__text">
       <p class="tag mono"><span>00</span> / {{ profile.location }}</p>
-      <h1 class="hero__title" id="hero-title">
-        <span class="hero__hello rv">Hi, I'm {{ profile.first_name }}.</span>
-        <span class="rv-mask"><span>{{ profile.headline_lead }} <em class="serif">{{ profile.headline_accent }}</em></span></span>
+      <h1 class="hero__title hero__entrance" id="hero-title">
+        <span class="hero__hello">Hi, I'm {{ profile.first_name }}.</span>
+        <span class="hero__headline"><span>{{ profile.headline_lead }} <em class="serif">{{ profile.headline_accent }}</em></span></span>
       </h1>
-      <p class="hero__intro rv" style="--i: 2">{{ profile.intro }}</p>
-      <div class="btns rv" style="--i: 3">
+      <p class="hero__intro hero__entrance">{{ profile.intro }}</p>
+      <div class="btns hero__entrance">
         <a class="btn btn--ink" href="{{ '/work/' | relative_url }}">Explore work</a>
         <a class="btn" href="{{ '/contact/' | relative_url }}">Let's talk</a>
         <a class="btn btn--ghost" href="{{ profile.linkedin }}">LinkedIn &nearr;</a>
@@ -21,9 +21,9 @@
         {% assign sm = '/assets/img/projects/' | append: img.folder | append: '/01-sm.webp' | relative_url %}
         {% assign lg = '/assets/img/projects/' | append: img.folder | append: '/01.webp' | relative_url %}
         {% if forloop.first %}
-        <img class="hero__slide" src="{{ sm }}" srcset="{{ sm }} 720w, {{ lg }} 1100w" sizes="(min-width: 900px) 46vw, 100vw" alt="{{ img.alt }}" width="720" height="900" style="--n: {{ forloop.index0 }}" fetchpriority="high" decoding="async">
+        <img class="hero__slide" src="{{ sm }}" srcset="{{ sm }} 720w, {{ lg }} 1100w" sizes="(min-width: 900px) 46vw, 90vw" alt="{{ img.alt }}" width="720" height="900" style="--n: {{ forloop.index0 }}" fetchpriority="high" loading="eager" decoding="async">
         {% else %}
-        <img class="hero__slide" data-src="{{ sm }}" data-srcset="{{ sm }} 720w, {{ lg }} 1100w" sizes="(min-width: 900px) 46vw, 100vw" alt="{{ img.alt }}" width="720" height="900" style="--n: {{ forloop.index0 }}" decoding="async">
+        <img class="hero__slide" data-src="{{ sm }}" data-srcset="{{ sm }} 720w, {{ lg }} 1100w" sizes="(min-width: 900px) 46vw, 90vw" alt="{{ img.alt }}" width="720" height="900" style="--n: {{ forloop.index0 }}" decoding="async">
         {% endif %}
         {% endfor %}
       </div>

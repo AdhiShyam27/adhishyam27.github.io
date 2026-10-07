@@ -168,7 +168,16 @@ main:focus { outline: none; }
 .hero__grid { position: relative; display: grid; gap: 36px; align-items: center; }
 .hero__title { font-size: clamp(2.7rem, 7.2vw, 6.4rem); letter-spacing: -0.05em; line-height: 0.98; }
 .hero__hello { display: block; font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 500; letter-spacing: -0.01em; color: var(--mute); margin-bottom: 18px; }
+.hero__headline { display: block; overflow: hidden; padding-bottom: 0.08em; }
+.hero__headline > span { display: inline-block; }
 .hero__intro { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink-2); max-width: 46ch; margin-top: 28px; }
+.hero__entrance { animation: heroRise 520ms var(--ease) both; }
+.hero__intro.hero__entrance { animation-delay: 80ms; }
+.hero__text > .btns.hero__entrance { animation-delay: 160ms; }
+@keyframes heroRise {
+  from { transform: translateY(14px); }
+  to { transform: translateY(0); }
+}
 .hero__media { position: relative; }
 .hero__slides { position: relative; aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden; background: var(--soft); box-shadow: var(--shadow); }
 .hero__slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
