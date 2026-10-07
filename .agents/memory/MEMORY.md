@@ -1,0 +1,1 @@
+- [Jekyll preview watcher](jekyll-preview-watcher.md) — exclude Replit state folders to prevent watcher-triggered rebuild loops.

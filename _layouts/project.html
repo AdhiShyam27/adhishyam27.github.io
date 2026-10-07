@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{% assign base = '/assets/img/projects/' | append: page.folder %}
+<article class="case">
+  <header class="case__hero">
+    <img class="case__hero-img" src="{{ base | append: '/01.webp' | relative_url }}" srcset="{{ base | append: '/01-sm.webp' | relative_url }} 720w, {{ base | append: '/01.webp' | relative_url }} 1100w" sizes="100vw" alt="{{ page.alts[0] }}" width="1600" height="900" fetchpriority="high">
+    <div class="case__hero-shade" aria-hidden="true"></div>
+    <div class="wrap case__hero-text">
+      <p class="tag mono tag--light"><a href="{{ '/work/' | relative_url }}">Work</a> / {{ page.region }}</p>
+      <h1 class="case__title">{{ page.title }}</h1>
+      <p class="case__loc">{{ page.location }}</p>
+    </div>
+  </header>
+
+  <div class="wrap case__grid">
+    <dl class="facts rv">
+      {% if page.year %}<div><dt class="mono">Year</dt><dd>{{ page.year }}</dd></div>{% endif %}
+      {% if page.area %}<div><dt class="mono">Area</dt><dd>{{ page.area }}</dd></div>{% endif %}
+      {% if page.client %}<div><dt class="mono">Client</dt><dd>{{ page.client }}</dd></div>{% endif %}
+      {% if page.scope %}<div><dt class="mono">Scope</dt><dd>{{ page.scope }}</dd></div>{% endif %}
+      {% if page.role %}<div><dt class="mono">My role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+      {% if page.collaborator %}<div><dt class="mono">In collaboration with</dt><dd>{{ page.collaborator }}</dd></div>{% endif %}
+      <div><dt class="mono">Firm</dt><dd>{{ page.firm }}</dd></div>
+      {% if page.award %}<div class="facts__award"><dt class="mono">Recognition</dt><dd>{{ page.award }}</dd></div>{% endif %}
+    </dl>
+    <div class="case__body prose rv">
+      {{ content }}
+    </div>
+  </div>
+
+  <section class="wrap gallery" aria-label="Project images">
+    <ul class="gallery__grid">
+      {% for alt in page.alts %}
+      {% assign n = forloop.index | prepend: '0' | slice: -2, 2 %}
+      <li class="gallery__item rv{% if forloop.first %} gallery__item--wide{% endif %}" style="--i: {{ forloop.index }}">
+        <a href="{{ base | append: '/' | append: n | append: '.webp' | relative_url }}" data-lightbox-src data-caption="{{ alt }}">
+          <img src="{{ base | append: '/' | append: n | append: '-sm.webp' | relative_url }}" alt="{{ alt }}" width="720" height="480" loading="lazy" decoding="async">
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="mono credit">Images: {{ page.firm }}{% if page.collaborator %} with {{ page.collaborator }}{% endif %}. Select an image to enlarge.</p>
+  </section>
+
+  <nav class="wrap case__pager" aria-label="More projects">
+    {% assign prev_order = page.order | minus: 1 %}
+    {% assign next_order = page.order | plus: 1 %}
+    {% assign prev = site.projects | where: "order", prev_order | first %}
+    {% assign next = site.projects | where: "order", next_order | first %}
+    {% if prev %}<a class="pager pager--prev" href="{{ prev.url | relative_url }}"><span class="mono">&larr; Previous</span>{{ prev.title }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a class="pager pager--next" href="{{ next.url | relative_url }}"><span class="mono">Next &rarr;</span>{{ next.title }}</a>{% else %}<a class="pager pager--next" href="{{ '/work/' | relative_url }}"><span class="mono">Back to</span>All work</a>{% endif %}
+  </nav>
+</article>

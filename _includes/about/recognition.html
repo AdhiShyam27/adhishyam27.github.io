@@ -1,0 +1,22 @@
+<section class="section index-band" aria-labelledby="rec-title">
+  <div class="wrap index">
+    <div class="index__head index__head--sticky">
+      {% include tag.html n="03" label="Recognition" %}
+      <h2 class="h2 rv-mask" id="rec-title"><span>Honours &amp; <em class="serif">memberships.</em></span></h2>
+      <p class="mono index__count">{{ site.data.recognition.size }} entries</p>
+    </div>
+    <ol class="index__list">
+      {% for r in site.data.recognition %}
+      <li class="flood rv" style="--i: {{ forloop.index }}">
+        <div class="flood__row" tabindex="0">
+          <span class="mono flood__n">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+          <span class="flood__main">
+            <span class="flood__title">{{ r.title }}</span>
+            <span class="flood__sub">{{ r.issuer }}</span>
+          </span>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

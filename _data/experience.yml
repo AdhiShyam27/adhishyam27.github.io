@@ -1,0 +1,90 @@
+# Education and experience, newest first. Shown on the Experience page timeline.
+- year: "2025 – 2027"
+  kind: Education
+  title: Master of Business Administration (MBA)
+  place: UC Berkeley, Haas School of Business
+  detail: Full-time MBA, Class of 2027.
+  points:
+    - Co-President, Haas Transportation and Mobility Club (HTMC)
+    - VP of Social, Haas Technology Club (HTC)
+    - Graduate Student Instructor, EWMBA 204 Operations (Prof. Sudheer Gupta), Fall 2026
+    - Reader, UGBA 177 AI and the Future of Business (Prof. Olaf Groth), Fall 2026
+
+- year: "Summer 2026"
+  kind: Experience
+  title: MBA Pathways Senior Operations Manager Intern (L6)
+  place: Amazon, San Bernardino, California
+  detail: Fulfillment center operations internship. Capstone on improving on-time outbound trailer departures.
+
+- year: "2021 – 2025"
+  kind: Experience
+  title: Senior Urban Planner & Product Manager (AI)
+  place: RSP Architects Planners & Engineers, Singapore
+  detail: >-
+    Senior Urban Planner & Product Manager (AI) (2025); Executive Urban Planner
+    & Product Manager (AI) (2024 to 2025); Urban Planner & Product Manager
+    (2022 to 2024); Urban Planner (2021 to 2022).
+  groups:
+    - name: Product innovation & AI
+      points:
+        - "Peggie Digital Concierge: scoped, launched, and iterated with engineers and designers for SingPost; achieved 70%+ adoption in 3 months."
+        - "AIVA Transport Concierge: led commuter research (200+ interviews) to define requirements; piloted with SBS Transit, earning 80%+ satisfaction and citywide deployment interest."
+        - "RSP Meta Office: pitched, built, and shipped the firm's first metaverse lab; cut modeling time 25% and grew revenue 15% within 2 months."
+        - "AI Task Force: founded and mentored 15+ cross-functional staff; scoped and prioritized features that boosted revenue 20% in Q1."
+    - name: Business development & partnerships
+      points:
+        - "Forged strategic partnerships with F&M and Lea Associates, leveraged personal networks to secure $7M in Middle East opportunities, and spearheaded market entry into Oman."
+        - "Delivered the Eco-City Master Plan for Rempang Island, integrating sustainable urbanism, and secured a $50M fund from the Indonesian government."
+        - "Led Oman workshops with MoHUP and the Governor, aligning technical strategies into prioritized policy roadmaps."
+    - name: Urban strategy & execution
+      points:
+        - "Directed 4+ planners on $10M+ APAC and Middle East projects, delivering 15% faster and 20% cheaper through tighter scoping and prioritization."
+        - "Zhuhai TOD Plan: built data-driven transit-oriented development, boosting connectivity by 25% and cutting commute times 20%."
+        - "Phuket Mobility: designed a sustainable transport strategy that increased ridership by 15% and won Best Southeast Asia Design (Seoul)."
+        - "Built automated feasibility dashboards (ArcGIS + R) that reduced manual analysis by 30% and standardized planning workflows."
+
+- year: "2022"
+  kind: Education
+  title: Product Management
+  place: General Assembly, Singapore
+  detail: "Capstone project: Aqua B, an MVP VR trainer that helps users practice overcoming aquaphobia before entering real water."
+
+- year: "2021"
+  kind: Education
+  title: Master of Urban Planning, Honours (Merit)
+  place: National University of Singapore (NUS)
+  detail: Elected General Secretary of the NUS Graduate Students' Society, representing 10K+ graduate students and launching welfare, internship, and aid initiatives.
+
+- year: "2020"
+  kind: Experience
+  title: Graduate Fellowship
+  place: CLC | Centre for Liveable Cities, Singapore
+  detail: May to June 2020.
+  points:
+    - "Public health & mobility research: scoped and delivered studies connecting transport design to health outcomes; informed 3+ policy briefs and 5+ urban design proposals."
+    - "Designed data-driven, health-focused planning strategies and presented to 3+ stakeholder forums, shaping resilience policy discussion."
+
+- year: "2017 – 2019"
+  kind: Experience
+  title: Assistant Urban & Regional Planner
+  place: Lea Associates South Asia (LASA), India & Oman
+  points:
+    - "Hyderabad Comprehensive Mobility Plan: applied GIS and demand forecasting to design a 360 km model corridor; boosted commuter efficiency 20% and connectivity 30%."
+    - "Led economic diversification and experiential master plans in Oman and India, driving 15%+ investment growth, a 40% rise in foot traffic, and a projected 35 to 40% tourism increase over 10 years."
+
+- year: "2017"
+  kind: Experience
+  title: District Urban Planner
+  place: District Urban Development Agency, Odisha, India
+  detail: January to June 2017.
+  points:
+    - "Developed a housing plan for 18 ULBs, ensuring access to affordable housing for 50K+ residents under the Housing for All policy."
+    - "Orchestrated district-wide AWAS-Mela (housing awareness) campaigns, boosting program outreach by 30% and community participation by 20%."
+
+- year: "2016"
+  kind: Education
+  title: Bachelor of Physical Planning, First Division
+  place: School of Planning and Architecture, New Delhi
+  points:
+    - "Elected National Sponsorship Coordinator, NOSPlan; raised $50K to support student welfare and community development."
+    - "Completed 4 internships in planning and infrastructure (LEA, IL&FS, Mozaic, Auroville); secured a full-time offer at LEA Associates."

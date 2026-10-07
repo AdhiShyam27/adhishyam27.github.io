@@ -1,0 +1,49 @@
+# AI products from my time at RSP. Text comes from my resume.
+- id: peggie
+  index: "01"
+  title: Peggie
+  kicker: Digital concierge · SingPost
+  description: Scoped, launched, and iterated with engineers and designers for SingPost.
+  stat: "70%+"
+  stat_label: adoption in 3 months
+  features:
+    - Scoped with the client
+    - Built with engineers and designers
+    - Launched and iterated
+  ui: chat
+- id: aiva
+  index: "02"
+  title: AIVA
+  kicker: Transport concierge · SBS Transit pilot
+  description: Led commuter research (200+ interviews) to define requirements; piloted with SBS Transit, earning 80%+ satisfaction and citywide deployment interest.
+  stat: "80%+"
+  stat_label: pilot satisfaction
+  features:
+    - 200+ commuter interviews
+    - Requirements from research
+    - Piloted with SBS Transit
+  ui: transit
+- id: meta-office
+  index: "03"
+  title: RSP Meta Office
+  kicker: Metaverse lab · RSP
+  description: Pitched, built, and shipped the firm's first metaverse lab; cut modeling time 25% and grew revenue 15% within 2 months.
+  stat: "25%"
+  stat_label: less modeling time
+  features:
+    - Pitched internally
+    - Built and shipped
+    - Revenue up 15% in 2 months
+  ui: spatial
+- id: ai-task-force
+  index: "04"
+  title: AI Task Force
+  kicker: Internal program · RSP
+  description: Founded and mentored 15+ cross-functional staff; scoped and prioritized features that boosted revenue 20% in Q1.
+  stat: "15+"
+  stat_label: staff mentored
+  features:
+    - Founded the task force
+    - Scoped and prioritized features
+    - Revenue up 20% in Q1
+  ui: board

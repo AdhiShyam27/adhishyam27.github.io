@@ -1,0 +1,39 @@
+# The "periodic table" on the About page. Every skill comes from my resume.
+families:
+  - Planning
+  - Data & GIS
+  - Design & 3D
+  - Product & AI
+  - Languages
+elements:
+  - { sym: Mp, name: City master planning, family: Planning, used: "Rempang, Kampot, Eco Collection, Yuzhong" }
+  - { sym: Ud, name: Urban design, family: Planning, used: "Hangzhou Expo Town, Difengjiang, Vietnam Ministries" }
+  - { sym: Tm, name: Transport & mobility planning, family: Planning, used: "Hyderabad CMP, Zhuhai TOD, Phuket Mobility" }
+  - { sym: Sp, name: Strategic planning, family: Planning, used: "Oman policy roadmaps" }
+  - { sym: Sc, name: Smart city planning, family: Planning, used: "Changchun ASIMD, Warangal" }
+  - { sym: Gl, name: Urban design guidelines, family: Planning, used: "Jurong Innovation District" }
+  - { sym: Ed, name: Economic development, family: Planning, used: "Oman and India master plans" }
+  - { sym: Po, name: Urban & transport policy, family: Planning, used: "CLC policy briefs" }
+  - { sym: Ag, name: ArcGIS, family: "Data & GIS", used: "Feasibility dashboards (ArcGIS + R)" }
+  - { sym: Qg, name: QGIS, family: "Data & GIS" }
+  - { sym: R, name: R, family: "Data & GIS", used: "Feasibility dashboards (ArcGIS + R)" }
+  - { sym: Sq, name: SQL, family: "Data & GIS" }
+  - { sym: St, name: Stata, family: "Data & GIS" }
+  - { sym: Si, name: SIDRA, family: "Data & GIS" }
+  - { sym: Sv, name: Survey design & analysis, family: "Data & GIS", used: "AIVA commuter research" }
+  - { sym: Ac, name: AutoCAD, family: "Design & 3D" }
+  - { sym: Su, name: SketchUp, family: "Design & 3D" }
+  - { sym: Rh, name: Rhino, family: "Design & 3D" }
+  - { sym: Gh, name: Grasshopper, family: "Design & 3D" }
+  - { sym: Vr, name: V-Ray, family: "Design & 3D" }
+  - { sym: Lu, name: Lumion, family: "Design & 3D" }
+  - { sym: Ai, name: Adobe Creative Cloud, family: "Design & 3D" }
+  - { sym: Sk, name: Sketch & InVision, family: "Design & 3D" }
+  - { sym: Pm, name: Product management, family: "Product & AI", used: "Peggie, AIVA, RSP Meta Office" }
+  - { sym: Ur, name: User research, family: "Product & AI", used: "AIVA (200+ interviews)" }
+  - { sym: Gp, name: GPT & LLM tools, family: "Product & AI", used: "AI Task Force" }
+  - { sym: Pd, name: Prompt development, family: "Product & AI" }
+  - { sym: Rp, name: Replit Agent, family: "Product & AI", used: "Mind the Gap, SPEND//LAB, this site" }
+  - { sym: En, name: English, family: Languages }
+  - { sym: Hi, name: Hindi, family: Languages }
+  - { sym: Te, name: Telugu, family: Languages }

@@ -1,0 +1,23 @@
+<section class="section section--band" id="builds" aria-labelledby="builds-title">
+  <div class="wrap index">
+    <div class="index__head">
+      {% include tag.html n="04" label="Built at Berkeley" %}
+      <h2 class="h2 rv-mask" id="builds-title"><span>Learning to <em class="serif">code.</em></span></h2>
+      <p class="mono index__count">{{ site.data.builds.size }} builds and ventures</p>
+    </div>
+    <ol class="index__list">
+      {% for b in site.data.builds %}
+      <li class="flood rv" style="--i: {{ forloop.index }}">
+        {% if b.link %}<a class="flood__row" href="{{ b.link }}">{% else %}<div class="flood__row">{% endif %}
+          <span class="mono flood__n">0{{ forloop.index }}</span>
+          <span class="flood__main">
+            <span class="flood__title">{{ b.title }}</span>
+            <span class="flood__sub">{{ b.kicker }}</span>
+          </span>
+          <span class="flood__status mono">{{ b.status }}{% if b.link %} &nearr;{% endif %}</span>
+        {% if b.link %}</a>{% else %}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

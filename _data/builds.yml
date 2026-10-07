@@ -1,0 +1,37 @@
+# Things I have built at Berkeley (coursework and ventures in progress).
+- title: Mind the Gap
+  kicker: Metro trivia web app · Replit
+  description: >-
+    A ten-station trivia quiz about the world's metro systems, built with plain
+    HTML, CSS and JavaScript. Question, TrueFalseQuestion and Quiz classes,
+    instant answer feedback with a route-map progress bar, a live code-concepts
+    inspector, and a rush-hour timer mode.
+  status: Live
+  link: https://mind-the-gap-quiz.replit.app
+  link_label: Play it
+- title: Birthday Countdown
+  kicker: First web app · Replit
+  description: >-
+    A countdown to 5:00 AM Pacific Time on my birthday, built with plain HTML,
+    CSS and JavaScript, with daylight saving time handled.
+  status: Live
+  link: https://birthday-countdown--shyamsadhi.replit.app
+  link_label: Open it
+- title: SPEND//LAB
+  kicker: Expense tracker · Replit
+  description: >-
+    An expense and trip-splitting tracker with a category donut, a monthly
+    budget ring, an entity-relationship diagram with click-to-JOIN, slider
+    splits, and a who-owes-whom settle-up graph.
+  status: In progress
+- title: CivicSignal
+  kicker: Venture in development
+  description: >-
+    A B2B SaaS platform aggregating municipal permit and civic data for
+    autonomous-vehicle operators. Customer discovery surveys distributed
+    through HTMC alumni networks.
+  status: In development
+- title: SafeRoute
+  kicker: Venture in development
+  description: A cycling safety navigation app for the Bay Area.
+  status: In development

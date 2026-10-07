@@ -1,0 +1,43 @@
+# Everything on the site about "who I am" comes from this file.
+name: Adhi Shyam Sunder
+first_name: Adhi
+initials: AS
+role: Urban Planner & AI Product Manager
+headline_lead: Urban planner and AI product
+headline_accent: manager.
+intro: >-
+  Senior Urban Planner and Product Manager (AI) at RSP Architects Planners
+  & Engineers in Singapore from 2021 to 2025. Now an MBA candidate at
+  UC Berkeley Haas, Class of 2027.
+location: Berkeley, California
+email: shyams.adhi@berkeley.edu
+linkedin: https://www.linkedin.com/in/shyamsunderadhi
+linkedin_label: linkedin.com/in/shyamsunderadhi
+# Paste your resume summary here if you want a verbatim summary on About.
+summary: >-
+  I am a passionate Urban & Transport Planner with great curiosity to solve
+  complex urban mobility and land-use problems through comprehensive analyses
+  of social, economic and political aspects of a region, using advanced
+  technological innovations to develop innovative planning solutions that are
+  realistic and cater best to the needs of both residents and planning
+  agencies.
+quick_facts:
+  - label: Based in
+    value: Berkeley, California
+  - label: Studying
+    value: MBA, UC Berkeley Haas (Class of 2027)
+  - label: Previously
+    value: RSP Architects Planners & Engineers, Singapore (2021 to 2025)
+  - label: Languages
+    value: English, Hindi, Telugu
+id_card:
+  band: PLANNER ID
+  program: MBA, Berkeley Haas
+  based: Berkeley, CA
+  valid: "2027"
+  back_lines:
+    - Senior Urban Planner & Product Manager (AI), RSP Architects
+    - Master of Urban Planning, Honours (Merit), NUS
+    - Bachelor of Physical Planning, First Division, SPA New Delhi
+    - Shipped Peggie (SingPost) and AIVA (SBS Transit pilot)
+    - Founded RSP's AI Task Force

@@ -1,0 +1,73 @@
+# ------------------------------------------------------------
+# Site settings for Adhi Shyam Sunder's portfolio
+# GitHub user site: https://USERNAME.github.io  (baseurl stays empty)
+# ------------------------------------------------------------
+title: Adhi Shyam Sunder
+tagline: Urban planner and AI product manager
+description: >-
+  Portfolio of Adhi Shyam Sunder: master planning and urban design across
+  six countries at RSP Architects, AI products shipped for SingPost and
+  SBS Transit, and an MBA at UC Berkeley Haas (Class of 2027).
+lang: en
+
+# IMPORTANT: confirm this is your exact GitHub username.
+# The repository must be named <github_username>.github.io
+github_username: adhishyam27
+url: "https://adhishyam27.github.io"
+baseurl: ""
+
+author:
+  name: Adhi Shyam Sunder
+  email: shyams.adhi@berkeley.edu
+  linkedin: shyamsunderadhi
+
+# Social card / SEO
+logo: /assets/img/og.jpg
+image: /assets/img/og.jpg
+social:
+  name: Adhi Shyam Sunder
+  links:
+    - https://www.linkedin.com/in/shyamsunderadhi
+
+# Project case studies live in _projects/ and publish at /work/<name>/
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      body_class: case-page
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - README.md
+  - PLAN.md
+  - Change1.md
+  - Change2.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - .replit
+  - replit.nix
+  - .git
+  - .github
+  - .local
+  - .cache
+  - .config
+  - .agents

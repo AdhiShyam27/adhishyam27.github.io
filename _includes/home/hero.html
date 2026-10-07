@@ -1,0 +1,34 @@
+{% assign profile = site.data.profile %}
+<section class="hero" aria-labelledby="hero-title">
+  <p class="hero__ghost" aria-hidden="true">{{ profile.first_name | upcase }}</p>
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="tag mono"><span>00</span> / {{ profile.location }}</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__hello rv">Hi, I'm {{ profile.first_name }}.</span>
+        <span class="rv-mask"><span>{{ profile.headline_lead }} <em class="serif">{{ profile.headline_accent }}</em></span></span>
+      </h1>
+      <p class="hero__intro rv" style="--i: 2">{{ profile.intro }}</p>
+      <div class="btns rv" style="--i: 3">
+        <a class="btn btn--ink" href="{{ '/work/' | relative_url }}">Explore work</a>
+        <a class="btn" href="{{ '/contact/' | relative_url }}">Let's talk</a>
+        <a class="btn btn--ghost" href="{{ profile.linkedin }}">LinkedIn &nearr;</a>
+      </div>
+    </div>
+    <div class="hero__media" data-hero-media>
+      <div class="hero__slides">
+        {% for img in page.hero_images %}
+        <img class="hero__slide" src="{{ '/assets/img/projects/' | append: img.folder | append: '/01-sm.webp' | relative_url }}" srcset="{{ '/assets/img/projects/' | append: img.folder | append: '/01-sm.webp' | relative_url }} 720w, {{ '/assets/img/projects/' | append: img.folder | append: '/01.webp' | relative_url }} 1100w" sizes="(min-width: 900px) 46vw, 100vw" alt="{{ img.alt }}" width="720" height="900" style="--n: {{ forloop.index0 }}"{% if forloop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+        {% endfor %}
+      </div>
+      <p class="hero__caption mono" aria-hidden="true"><span class="dot"></span> Selected work at RSP Architects</p>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      {% for i in (1..2) %}
+      <span>Abu Dhabi</span><span>Dubai</span><span>Singapore</span><span>Hanoi</span><span>Kampot</span><span>Phnom Penh</span><span>Batam</span><span>Zhuhai</span><span>Lanzhou</span><span>Changchun</span><span>Fuzhou</span><span>Hangzhou</span><span>Hyderabad</span><span>Muscat</span><span>Berkeley</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>

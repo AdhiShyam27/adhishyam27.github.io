@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<section class="page-head wrap">
+  {% include tag.html n=page.tag_n label=page.tag_label %}
+  <h1 class="h1 rv-mask"><span>{{ page.heading | default: page.title }} {% if page.accent %}<em class="serif">{{ page.accent }}</em>{% endif %}</span></h1>
+  {% if page.lede %}<p class="lede rv">{{ page.lede }}</p>{% endif %}
+</section>
+{{ content }}

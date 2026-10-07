@@ -1,0 +1,22 @@
+<section class="section" id="numbers" aria-labelledby="numbers-title">
+  <div class="wrap">
+    <div class="section__head section__head--row">
+      <div>
+        {% include tag.html n="03" label="By the numbers" %}
+        <h2 class="h2 rv-mask" id="numbers-title"><span>Scale, in <em class="serif">figures.</em></span></h2>
+      </div>
+      <p class="mono numbers__hint" aria-hidden="true">Scroll sideways &rarr;</p>
+    </div>
+  </div>
+  <ol class="numbers" tabindex="0" aria-label="Key figures">
+    {% for n in page.numbers %}
+    <li class="stat rv" style="--i: {{ forloop.index }}">
+      <p class="mono stat__index">{{ forloop.index | prepend: '0' }} / 0{{ page.numbers.size }}</p>
+      <p class="stat__num"><span>{{ n.prefix }}</span><span data-count="{{ n.value }}">{{ n.value }}</span><span>{{ n.suffix }}</span></p>
+      <p class="stat__label">{{ n.label }}</p>
+      <p class="stat__detail">{{ n.detail }}</p>
+    </li>
+    {% endfor %}
+    <li class="stat stat--end"><p class="serif">and counting &rarr;</p></li>
+  </ol>
+</section>

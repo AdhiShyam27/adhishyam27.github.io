@@ -1,0 +1,61 @@
+{% assign profile = site.data.profile %}
+<section class="section about" aria-label="Introduction">
+  <div class="wrap about__grid">
+    <div class="about__left rv">
+      <p class="about__hi">Hi, I'm <strong>{{ profile.name }}</strong>.</p>
+      <p class="about__summary">{{ profile.summary }}</p>
+      <p class="about__more">At RSP Architects Planners &amp; Engineers in Singapore I worked on master plans across Asia-Pacific and the Middle East, then moved into AI product management: shipping Peggie for SingPost, piloting AIVA with SBS Transit, and founding the firm's AI Task Force.</p>
+      <div class="btns">
+        <a class="btn btn--ink" href="{{ '/experience/' | relative_url }}">Experience</a>
+        <a class="btn" href="{{ profile.linkedin }}">LinkedIn &nearr;</a>
+      </div>
+    </div>
+
+    <div class="lanyard" data-lanyard>
+      <div class="lanyard__strap" aria-hidden="true"><span>{{ profile.name }} &middot; {{ profile.role }} &middot; {{ profile.name }} &middot; {{ profile.role }} &middot;</span></div>
+      <div class="lanyard__clip" aria-hidden="true"></div>
+      <div class="idcard" data-card tabindex="0" role="button" aria-pressed="false" aria-label="ID card for {{ profile.name }}. Press Enter to flip.">
+        <div class="idcard__inner">
+          <div class="idcard__face idcard__front">
+            <p class="idcard__band mono">{{ profile.id_card.band }}</p>
+            <div class="idcard__photo">
+              {% if profile.photo %}
+              <img src="{{ profile.photo | relative_url }}" alt="Portrait of {{ profile.name }}" width="128" height="156" loading="lazy">
+              {% else %}
+              <span class="idcard__initials" aria-hidden="true">{{ profile.initials }}</span>
+              {% endif %}
+            </div>
+            <p class="idcard__name">{{ profile.name }}</p>
+            <p class="idcard__role">{{ profile.role }}</p>
+            <dl class="idcard__rows mono">
+              <div><dt>Program</dt><dd>{{ profile.id_card.program }}</dd></div>
+              <div><dt>Based</dt><dd>{{ profile.id_card.based }}</dd></div>
+              <div><dt>Valid till</dt><dd>{{ profile.id_card.valid }}</dd></div>
+            </dl>
+            <div class="idcard__foot" aria-hidden="true"><span class="barcode"></span><span class="holo"></span></div>
+          </div>
+          <div class="idcard__face idcard__back">
+            <p class="idcard__band mono">What I am</p>
+            <ul class="idcard__list">
+              {% for line in profile.id_card.back_lines %}<li>{{ line }}</li>{% endfor %}
+            </ul>
+            <p class="idcard__sign serif">{{ profile.name }}</p>
+            <p class="mono idcard__found">If found, say hello &middot; {{ profile.email }}</p>
+          </div>
+        </div>
+      </div>
+      <p class="mono lanyard__hint" aria-hidden="true">Hover or tap to flip</p>
+    </div>
+
+    <div class="about__right rv" style="--i: 2">
+      <h2 class="mono about__facts-title">Quick facts</h2>
+      <dl class="facts facts--stack">
+        {% for f in profile.quick_facts %}
+        <div><dt class="mono">{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+        {% endfor %}
+        <div><dt class="mono">Email</dt><dd><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></dd></div>
+      </dl>
+      <blockquote class="about__quote serif">&ldquo;Planning solutions that are realistic and cater best to the needs of both residents and planning agencies.&rdquo;</blockquote>
+    </div>
+  </div>
+</section>

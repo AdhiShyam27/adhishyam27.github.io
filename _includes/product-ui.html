@@ -1,0 +1,24 @@
+{% comment %}Illustrative mini interfaces drawn in CSS. Not screenshots.{% endcomment %}
+<div class="mini mini--{{ include.ui }}" aria-hidden="true">
+  {% if include.ui == "chat" %}
+  <div class="mini__bar"><span></span><span></span><span></span></div>
+  <div class="mini__bubble mini__bubble--in"><span></span></div>
+  <div class="mini__bubble mini__bubble--out"><span></span><span class="w60"></span></div>
+  <div class="mini__bubble mini__bubble--in mini__bubble--short"><span></span></div>
+  <div class="mini__input"><span></span></div>
+  {% elsif include.ui == "transit" %}
+  <div class="mini__bar"><span></span><span></span><span></span></div>
+  <div class="mini__route"><i></i><i></i><i class="on"></i><i></i><i></i></div>
+  <div class="mini__row"><b></b><span></span></div>
+  <div class="mini__row"><b></b><span class="w60"></span></div>
+  <div class="mini__bubble mini__bubble--out"><span></span></div>
+  {% elsif include.ui == "spatial" %}
+  <div class="mini__bar"><span></span><span></span><span></span></div>
+  <div class="mini__iso"><i></i><i></i><i></i><i></i></div>
+  <div class="mini__row"><b></b><span class="w40"></span></div>
+  {% else %}
+  <div class="mini__bar"><span></span><span></span><span></span></div>
+  <div class="mini__cols"><div><i></i><i></i><i></i></div><div><i></i><i></i></div><div><i></i></div></div>
+  {% endif %}
+  <p class="mini__label mono">Illustrative UI</p>
+</div>

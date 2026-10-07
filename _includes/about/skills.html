@@ -1,0 +1,35 @@
+{% assign skills = site.data.skills %}
+<section class="section section--band" aria-labelledby="skills-title">
+  <div class="wrap">
+    <div class="section__head">
+      {% include tag.html n="02" label="Skills" %}
+      <h2 class="h2 rv-mask" id="skills-title"><span>The periodic table of my <em class="serif">toolkit.</em></span></h2>
+    </div>
+    <div class="chips chips--filter" role="group" aria-label="Filter skills by family" data-skill-filter>
+      <button type="button" class="chip is-on" aria-pressed="true" data-family="all">All</button>
+      {% for fam in skills.families %}
+      <button type="button" class="chip" aria-pressed="false" data-family="{{ fam }}">{{ fam }}</button>
+      {% endfor %}
+    </div>
+    <div class="ptable">
+      <ul class="ptable__grid" data-skill-grid>
+        {% for el in skills.elements %}
+        <li class="el" data-family="{{ el.family }}" style="--d: {{ forloop.index0 }}">
+          <button type="button" class="el__btn" data-name="{{ el.name }}" data-fam="{{ el.family }}" data-used="{{ el.used }}" data-sym="{{ el.sym }}" data-num="{{ forloop.index }}">
+            <span class="el__num mono">{{ forloop.index }}</span>
+            <span class="el__sym">{{ el.sym }}</span>
+            <span class="el__name">{{ el.name }}</span>
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+      <aside class="inspector" aria-live="polite" data-inspector>
+        <p class="mono inspector__label">Inspector</p>
+        <p class="inspector__sym" data-i-sym>Mp</p>
+        <p class="inspector__name" data-i-name>City master planning</p>
+        <p class="mono inspector__fam" data-i-fam>Planning</p>
+        <p class="inspector__used" data-i-used>Used in: Rempang, Kampot, Eco Collection, Yuzhong</p>
+      </aside>
+    </div>
+  </div>
+</section>

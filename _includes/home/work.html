@@ -1,0 +1,34 @@
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="section__head">
+      {% include tag.html n="01" label="Selected planning work" %}
+      <h2 class="h2 rv-mask" id="work-title"><span>Places I helped <em class="serif">plan.</em></span></h2>
+      <p class="section__lede rv">Master planning and urban design across six countries at RSP Architects Planners &amp; Engineers. Hover or tap a panel to open it.</p>
+    </div>
+    <ul class="accordion" data-accordion>
+      {% for slug in page.featured %}
+      {% assign p = site.projects | where: "folder", slug | first %}
+      <li class="accordion__panel{% if forloop.first %} is-open{% endif %}" data-panel>
+        <img class="accordion__img" src="{{ '/assets/img/projects/' | append: p.folder | append: '/01-sm.webp' | relative_url }}" srcset="{{ '/assets/img/projects/' | append: p.folder | append: '/01-sm.webp' | relative_url }} 720w, {{ '/assets/img/projects/' | append: p.folder | append: '/01.webp' | relative_url }} 1100w" sizes="(min-width: 900px) 60vw, 100vw" alt="" width="720" height="480" loading="lazy" decoding="async">
+        <button class="accordion__spine" type="button" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" data-panel-btn>
+          <span class="mono">0{{ forloop.index }}</span>
+          <span class="accordion__spine-title">{{ p.short_title }}</span>
+          <span class="accordion__plus" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion__content">
+          <p class="mono accordion__kicker">0{{ forloop.index }} &middot; {{ p.region }} &middot; {{ p.year }}</p>
+          <h3 class="accordion__title">{{ p.title }}</h3>
+          <p class="accordion__sum">{{ p.summary }}</p>
+          <ul class="chips">
+            {% if p.area %}<li>{{ p.area }}</li>{% endif %}
+            <li>{{ p.location }}</li>
+            {% if p.role %}<li>{{ p.role }}</li>{% endif %}
+          </ul>
+          <a class="btn btn--light" href="{{ p.url | relative_url }}">View project &nearr;</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="section__more rv"><a class="link-arrow" href="{{ '/work/' | relative_url }}">See all 14 planning projects &rarr;</a></p>
+  </div>
+</section>

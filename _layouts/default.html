@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}" id="top">
+<head>
+<script>document.documentElement.className += " js";</script>
+{% include head.html %}
+</head>
+<body class="{{ page.body_class }}">
+{% include nav.html %}
+<main id="main" tabindex="-1">
+{{ content }}
+</main>
+{% include footer.html %}
+<dialog class="lightbox" data-lightbox aria-label="Image viewer">
+  <button class="lightbox__close" type="button" data-lightbox-close>Close</button>
+  <img class="lightbox__img" src="" alt="">
+  <p class="lightbox__cap mono"></p>
+</dialog>
+</body>
+</html>

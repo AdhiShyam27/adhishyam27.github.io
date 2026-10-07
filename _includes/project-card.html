@@ -1,0 +1,14 @@
+{% assign p = include.project %}
+<li class="pcard rv" data-region="{{ p.region }}" style="--i: {{ include.i | modulo: 3 }}">
+  <a class="pcard__link" href="{{ p.url | relative_url }}">
+    <figure class="pcard__media">
+      <img src="{{ '/assets/img/projects/' | append: p.folder | append: '/01-sm.webp' | relative_url }}" alt="{{ p.alts[0] }}" width="720" height="440" loading="lazy" decoding="async">
+    </figure>
+    <div class="pcard__body">
+      <p class="mono pcard__meta"><span>{{ p.region }}</span><span>{{ p.year }}</span></p>
+      <h3 class="pcard__title">{{ p.title }}</h3>
+      <p class="pcard__sum">{{ p.summary }}</p>
+      <span class="pcard__more" aria-hidden="true">View project &nearr;</span>
+    </div>
+  </a>
+</li>

@@ -1,0 +1,22 @@
+<section class="section section--band" id="products" aria-labelledby="products-title">
+  <div class="wrap">
+    <div class="section__head">
+      {% include tag.html n="02" label="AI products" %}
+      <h2 class="h2 rv-mask" id="products-title"><span>Products I <em class="serif">shipped.</em></span></h2>
+      <p class="section__lede rv">From 2022 I worked as an urban planner and product manager at RSP, taking AI products from research to launch.</p>
+    </div>
+    <ul class="products">
+      {% for pr in site.data.products %}
+      <li class="product rv" style="--i: {{ forloop.index }}" id="{{ pr.id }}">
+        {% include product-ui.html ui=pr.ui %}
+        <div class="product__body">
+          <p class="mono product__kicker">{{ pr.index }} &middot; {{ pr.kicker }}</p>
+          <h3 class="product__title">{{ pr.title }}</h3>
+          <p class="product__stat"><span class="product__num">{{ pr.stat }}</span> <span class="product__statlabel">{{ pr.stat_label }}</span></p>
+          <p class="product__desc">{{ pr.description }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
