@@ -564,3 +564,4 @@ main:focus { outline: none; }
 .case__role-title { color: var(--mute); margin: 28px 0 8px; font-weight: 500; letter-spacing: 0.04em; }
 .case__role { font-size: 1.15rem; color: var(--ink); font-weight: 500; }
 .facts__stat dd { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
+.case__hero--screenshot .case__hero-img { filter: blur(3px) brightness(0.55); transform: scale(1.04); animation: none; }

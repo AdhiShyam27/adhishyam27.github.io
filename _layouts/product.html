@@ -4,7 +4,7 @@ layout: default
 {% assign pr = site.data.products | where: "id", page.product | first %}
 {% assign base = '/assets/img/products/' | append: pr.id %}
 <article class="case">
-  <header class="case__hero">
+  <header class="case__hero{% if pr.firm %} case__hero--screenshot{% endif %}">
     <img class="case__hero-img" src="{{ base | append: '/01.webp' | relative_url }}" srcset="{{ base | append: '/01-sm.webp' | relative_url }} 720w, {{ base | append: '/01.webp' | relative_url }} 1400w" sizes="100vw" alt="{{ pr.photos[0] }}" width="1400" height="900" fetchpriority="high">
     <div class="case__hero-shade" aria-hidden="true"></div>
     <div class="wrap case__hero-text">
@@ -20,8 +20,8 @@ layout: default
       {% if pr.date_label %}<div><dt class="mono">Date</dt><dd>{{ pr.date_label }}</dd></div>{% endif %}
       <div><dt class="mono">Where</dt><dd>{{ pr.where }}</dd></div>
       {% if pr.partners %}<div><dt class="mono">With</dt><dd>{{ pr.partners }}</dd></div>{% endif %}
-      <div><dt class="mono">Firm</dt><dd>RSP Architects Planners &amp; Engineers</dd></div>
-      <div><dt class="mono">Press</dt><dd><a href="{{ pr.press }}">Read RSP's article &nearr;</a></dd></div>
+      <div><dt class="mono">{% if pr.firm %}Product{% else %}Firm{% endif %}</dt><dd>{{ pr.firm | default: "RSP Architects Planners &amp; Engineers" }}</dd></div>
+      <div><dt class="mono">{% if pr.press_label %}Website{% else %}Press{% endif %}</dt><dd><a href="{{ pr.press }}">{{ pr.press_label | default: "Read RSP's article" }} &nearr;</a></dd></div>
       {% if pr.video %}<div><dt class="mono">Video</dt><dd><a href="{{ pr.video }}">Watch on YouTube &nearr;</a></dd></div>{% endif %}
     </dl>
     <div class="case__body prose rv">

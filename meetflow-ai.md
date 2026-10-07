@@ -1,0 +1,14 @@
+---
+layout: product
+product: meetflow-ai
+title: MeetFlow AI, an AI meeting assistant for Chrome
+permalink: /work/meetflow-ai/
+body_class: case-page
+description: MeetFlow AI captures live transcripts in Chrome and turns meetings into summaries, action items and follow-up workflows, without a bot in the call.
+prev_url: /work/meta-office/
+prev_label: Previous product
+prev_title: RSP Meta Office
+next_url: /work/#ai-products
+next_label: Back to
+next_title: All work
+---

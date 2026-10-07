@@ -131,3 +131,43 @@
     - Scoped and prioritized features
     - Revenue up 20% in Q1
   ui: board
+
+- id: meetflow-ai
+  index: "05"
+  title: MeetFlow AI
+  kicker: AI meeting assistant · Chrome extension
+  description: >-
+    Captures live transcripts in Chrome and turns saved meetings into summaries,
+    action items and follow-up workflows, without sending a bot into the call.
+  stat: "33+"
+  stat_label: languages supported
+  firm: MeetFlow AI (my product)
+  where: Chrome, for Google Meet, Zoom and MS Teams
+  date_label: Private beta, rolling out to a first group of 50 users
+  story:
+    - >-
+      MeetFlow AI's promise is "Your meetings, distilled into action." It captures
+      live transcripts in Chrome, then turns saved meetings into summaries, action
+      items and follow-up workflows, without sending a bot into the call. It works
+      with Google Meet, Zoom and MS Teams.
+    - >-
+      Live transcription runs in the browser or from recordings, with speaker
+      labels and 33+ languages with auto-detection. AI summaries pull out action
+      items and decisions and draft follow-ups, and AI Workflows send the results
+      to Slack, Gmail, Notion, Linear or a custom webhook in one click.
+    - >-
+      Data is encrypted at rest, capture is bot-free, and third-party workflows are
+      opt-in. MeetFlow is rolling out to a first group of 50 users for weekly
+      product feedback and fast iteration, with Free, Pro, Team and Enterprise plans.
+  my_role: >-
+    My own product, shipped as a Chrome extension.
+  press: https://meetflow-ai.vercel.app/
+  press_label: Visit MeetFlow AI
+  photos:
+    - The MeetFlow AI home page
+  features:
+    - Live transcription, no bot in the call
+    - AI summaries, action items and decisions
+    - Workflows to Slack, Gmail, Notion and Linear
+  ui: chat
+
