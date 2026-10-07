@@ -1,0 +1,59 @@
+{% assign route_countries = "UAE,Singapore,Vietnam,Cambodia,Indonesia,China" | split: "," %}
+{% assign route_projects = site.projects | sort: "order" %}
+{% assign route_max = 6 %}
+{% for country in route_countries %}
+  {% assign country_projects = route_projects | where: "region", country %}
+  {% if country_projects.size > route_max %}{% assign route_max = country_projects.size %}{% endif %}
+{% endfor %}
+{% assign route_width = route_max | minus: 1 | times: 160 | plus: 320 %}
+{% assign route_end = route_width | minus: 100 %}
+<figure class="route-map rv" data-route-map aria-labelledby="route-map-caption">
+  <div class="route-map__scroll">
+    <svg class="route-map__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {{ route_width }} 570" role="group" aria-labelledby="route-map-title" aria-describedby="route-map-description" data-route-svg>
+      <title id="route-map-title">Planning project route map</title>
+      <desc id="route-map-description">Six country lines with linked project stations. Tab to a station and press Enter to open its project.</desc>
+      {% for country in route_countries %}
+      {% assign route_index = forloop.index0 %}
+      {% assign route_y = route_index | times: 86 | plus: 52 %}
+      {% assign country_projects = route_projects | where: "region", country %}
+      <g class="route-map__line" data-route-country="{{ country | escape }}" style="--route-index: {{ route_index }}" role="group" aria-label="{{ country | escape }}">
+        <text class="route-map__country" x="16" y="{{ route_y | plus: 6 }}">{{ country | upcase | escape }}</text>
+        <path class="route-map__track" d="M 200 {{ route_y }} H {{ route_end }}" pathLength="1" aria-hidden="true" />
+        {% for project in country_projects %}
+        {% assign station_x = forloop.index0 | times: 160 | plus: 220 %}
+        {% assign station_id = project.slug | prepend: "route-station-" %}
+        <a class="route-map__station" href="{{ project.url | relative_url }}" tabindex="0" aria-label="{{ project.short_title | default: project.title | escape }}: {{ project.title | escape }}" aria-describedby="{{ station_id }}-detail" data-route-station data-title="{{ project.title | escape }}" data-location="{{ project.location | escape }}" data-year="{{ project.year | escape }}">
+          <title id="{{ station_id }}-title">{{ project.title | escape }}</title>
+          <desc id="{{ station_id }}-detail">{{ project.location | escape }}, {{ project.year | escape }}</desc>
+          <rect class="route-map__hit" x="{{ station_x | minus: 70 }}" y="{{ route_y | minus: 22 }}" width="140" height="78" aria-hidden="true" />
+          <circle class="route-map__ring" cx="{{ station_x }}" cy="{{ route_y }}" r="18" aria-hidden="true" />
+          <circle class="route-map__dot" cx="{{ station_x }}" cy="{{ route_y }}" r="9" aria-hidden="true" />
+          <text class="route-map__label" x="{{ station_x }}" y="{{ route_y | plus: 33 }}" text-anchor="middle" aria-hidden="true">
+            {% assign label_words = project.short_title | default: project.title | split: " " %}
+            {% assign label_line = "" %}
+            {% assign label_first = true %}
+            {% for word in label_words %}
+              {% assign candidate = label_line | append: " " | append: word | strip %}
+              {% if candidate.size > 19 and label_line != "" %}
+                <tspan x="{{ station_x }}" dy="{% if label_first %}0{% else %}21{% endif %}">{{ label_line | escape }}</tspan>
+                {% assign label_first = false %}
+                {% assign label_line = word %}
+              {% else %}
+                {% assign label_line = candidate %}
+              {% endif %}
+            {% endfor %}
+            <tspan x="{{ station_x }}" dy="{% if label_first %}0{% else %}21{% endif %}">{{ label_line | escape }}</tspan>
+          </text>
+        </a>
+        {% endfor %}
+      </g>
+      {% endfor %}
+    </svg>
+  </div>
+  <div class="route-map__info" data-route-info hidden aria-hidden="true">
+    <strong class="route-map__info-title" data-route-info-title></strong>
+    <span class="route-map__info-detail" data-route-info-detail></span>
+  </div>
+  <p class="route-map__hint">Scroll sideways &rarr;</p>
+  <figcaption class="route-map__caption" id="route-map-caption">Six countries, fourteen projects. Select a station to open the project.</figcaption>
+</figure>
