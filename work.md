@@ -30,6 +30,8 @@ lede: Fourteen master planning and urban design projects from RSP Architects, fo
   </div>
 </section>
 
+{% include work/process.html %}
+
 <section class="section section--band" id="ai-products" aria-labelledby="ai-title">
   <div class="wrap">
     <div class="section__head">
