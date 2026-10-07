@@ -38,7 +38,7 @@ lede: Fourteen master planning and urban design projects from RSP Architects, fo
     <div class="section__head">
       {% include tag.html n="B" label="AI products" %}
       <h2 class="h2 rv-mask" id="ai-title"><span>Products I <em class="serif">shipped.</em></span></h2>
-      <p class="section__lede rv">Product work at RSP Architects, and MeetFlow AI, my own product. Select a card with a photo for the full story; the AI Task Force card uses an illustrative interface, not a screenshot.</p>
+      <p class="section__lede rv">Product work at RSP Architects, and MeetFlow AI, my own product. Select a card with a photo for the full story.</p>
     </div>
     <ul class="products">
       {% for pr in site.data.products %}

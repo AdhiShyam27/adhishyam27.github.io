@@ -8,7 +8,7 @@ description: RSP META, the firm's first metaverse venture, with a virtual office
 prev_url: /work/aiva/
 prev_label: Previous product
 prev_title: AIVA
-next_url: /work/meetflow-ai/
+next_url: /work/ai-task-force/
 next_label: Next product
-next_title: MeetFlow AI
+next_title: AI Task Force
 ---

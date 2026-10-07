@@ -123,12 +123,24 @@
   index: "04"
   title: AI Task Force
   kicker: Internal program · RSP
-  description: Founded and mentored 15+ cross-functional staff; scoped and prioritized features that boosted revenue 20% in Q1.
+  description: Founded and mentored 15+ cross-functional staff; built an internal AI rendering tool with Hugging Face ControlNet and Stable Diffusion and scaled it to RSP studios from the Middle East to Southeast Asia; scoped and prioritized features that boosted revenue 20% in Q1.
   stat: "15+"
   stat_label: staff mentored
+  where: RSP studios, from the Middle East to Southeast Asia
+  story:
+    - I founded RSP's AI Task Force and mentored 15+ cross-functional staff. We scoped and prioritized features that boosted revenue 20% in Q1.
+    - One of the things I built with the task force is RSP's own internal AI rendering tool, developed with Hugging Face ControlNet and Stable Diffusion. ControlNet follows the lines of a designer's sketch, and Stable Diffusion renders it as an image. We scaled the tool to all RSP studios, from the Middle East to Southeast Asia.
+    - "The images on this page are demos I made to show the method: two of my own hand sketches for Hangzhou Expo Town, run through ControlNet (scribble) and Stable Diffusion 1.5 on Hugging Face. They are not output from RSP's internal tool."
+  my_role: Founded and mentored 15+ cross-functional staff; scoped and prioritized features that boosted revenue 20% in Q1.
+  photos:
+    - "Demo: AI render from my Hangzhou Expo Town hand sketch, ControlNet (scribble) and Stable Diffusion 1.5"
+    - "The input: my hand sketch for Hangzhou Expo Town, China"
+    - "Demo: AI render from my Hangzhou Expo Town massing sketch, same method"
+    - "The input: my massing sketch for Hangzhou Expo Town, China"
   features:
     - Founded the task force
-    - Scoped and prioritized features
+    - Internal AI rendering tool with ControlNet and Stable Diffusion
+    - Scaled to RSP studios from the Middle East to Southeast Asia
     - Revenue up 20% in Q1
   ui: board
 

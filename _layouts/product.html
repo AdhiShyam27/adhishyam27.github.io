@@ -21,7 +21,7 @@ layout: default
       <div><dt class="mono">Where</dt><dd>{{ pr.where }}</dd></div>
       {% if pr.partners %}<div><dt class="mono">With</dt><dd>{{ pr.partners }}</dd></div>{% endif %}
       <div><dt class="mono">{% if pr.firm %}Product{% else %}Firm{% endif %}</dt><dd>{{ pr.firm | default: "RSP Architects Planners &amp; Engineers" }}</dd></div>
-      <div><dt class="mono">{% if pr.press_label %}Website{% else %}Press{% endif %}</dt><dd><a href="{{ pr.press }}">{{ pr.press_label | default: "Read RSP's article" }} &nearr;</a></dd></div>
+      {% if pr.press %}<div><dt class="mono">{% if pr.press_label %}Website{% else %}Press{% endif %}</dt><dd><a href="{{ pr.press }}">{{ pr.press_label | default: "Read RSP's article" }} &nearr;</a></dd></div>{% endif %}
       {% if pr.video %}<div><dt class="mono">Video</dt><dd><a href="{{ pr.video }}">Watch on YouTube &nearr;</a></dd></div>{% endif %}
     </dl>
     <div class="case__body prose rv">
