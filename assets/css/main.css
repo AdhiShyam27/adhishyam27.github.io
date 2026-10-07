@@ -593,3 +593,57 @@ main:focus { outline: none; }
     overflow: visible; scroll-snap-type: none; padding-bottom: 4px;
   }
 }
+
+/* ---------- 22. Work: project route map ---------- */
+.route-map { position: relative; min-width: 0; max-width: 100%; margin: 0 0 32px; }
+.route-map__scroll { max-width: 100%; min-width: 0; border-block: 1px solid var(--line); }
+.route-map__svg { display: block; width: 100%; height: auto; overflow: visible; }
+.route-map__line { transition: opacity 180ms var(--ease); }
+.route-map__track { fill: none; stroke: var(--ink); stroke-width: 2; }
+.route-map__country { font-family: var(--mono); font-size: 16px; letter-spacing: 0.06em; fill: var(--ink); cursor: default; }
+.route-map__label { font-family: var(--sans); font-size: 18px; font-weight: 500; fill: var(--ink); }
+.route-map__station { cursor: pointer; text-decoration: none; }
+.route-map__hit { fill: transparent; }
+.route-map__dot { fill: var(--card); stroke: var(--ink); stroke-width: 2.5; transform-box: fill-box; transform-origin: center; transition: transform 180ms var(--ease); }
+.route-map__ring { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 3 3; opacity: 0; }
+.route-map__station:hover .route-map__dot,
+.route-map__station:focus .route-map__dot { fill: var(--ink); transform: scale(1.25); }
+.route-map__station:focus { outline: none; }
+.route-map__station:focus .route-map__ring { opacity: 1; }
+.route-map__station:hover .route-map__label,
+.route-map__station:focus .route-map__label { text-decoration: underline; }
+.route-map__svg[data-selected] .route-map__line { opacity: 0.28; }
+.route-map__svg[data-selected] .route-map__line.is-selected { opacity: 1; }
+.route-map__line.is-selected .route-map__track { stroke-width: 3; }
+.route-map__svg:has(.route-map__country:hover) .route-map__line { opacity: 0.28; }
+.route-map__svg:has(.route-map__country:hover) .route-map__line:has(.route-map__country:hover),
+.route-map__svg .route-map__line:focus-within,
+.route-map__svg .route-map__line:has(.route-map__station:hover) { opacity: 1; }
+.route-map__line:has(.route-map__country:hover) .route-map__track { stroke-width: 3; }
+.route-map__info {
+  position: absolute; z-index: 4; width: min(340px, calc(100% - 24px));
+  padding: 14px 18px; background: var(--card); color: var(--ink);
+  border: 1px solid var(--ink); border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(13, 13, 13, 0.1);
+  overflow-wrap: anywhere;
+}
+.route-map__info[hidden] { display: none; }
+.route-map__info-title { display: block; font-size: 1rem; line-height: 1.35; letter-spacing: -0.015em; }
+.route-map__info-detail { display: block; margin-top: 7px; font-family: var(--mono); font-size: 0.72rem; line-height: 1.6; color: var(--ink-2); }
+.route-map__caption { margin: 16px 0 0; color: var(--mute); font-size: 0.9rem; }
+.route-map__hint { display: none; }
+.js .route-map:not(.is-in) .route-map__track { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js .route-map.is-in .route-map__track { animation: route-map-draw 1.2s var(--ease) both; animation-delay: calc(var(--route-index) * 90ms); }
+@keyframes route-map-draw {
+  from { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  to { stroke-dasharray: 1; stroke-dashoffset: 0; }
+}
+@media (max-width: 699px) {
+  .route-map__scroll { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; }
+  .route-map__svg { width: 1000px; max-width: none; overflow: hidden; }
+  .route-map__hint { display: block; margin: 12px 0 0; color: var(--mute); font-family: var(--mono); font-size: 0.7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .route-map .route-map__track { animation: none !important; stroke-dasharray: none; stroke-dashoffset: 0; }
+  .route-map .route-map__dot { transition: none; }
+}

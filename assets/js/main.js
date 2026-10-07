@@ -164,6 +164,47 @@
   }
 
   /* Work page: filter project cards by country */
+  var routeMap = $("[data-route-map]");
+  var routeSvg = $("[data-route-svg]");
+  if (routeMap) {
+    var routeInfo = $("[data-route-info]", routeMap);
+    var activeStation = null;
+    var routeHideTimer;
+    function showRouteInfo(station) {
+      clearTimeout(routeHideTimer);
+      activeStation = station;
+      $("[data-route-info-title]", routeInfo).textContent = station.dataset.title;
+      $("[data-route-info-detail]", routeInfo).textContent = station.dataset.location + " · " + station.dataset.year;
+      routeInfo.hidden = false;
+      var bounds = routeMap.getBoundingClientRect();
+      var dot = $(".route-map__dot", station).getBoundingClientRect();
+      var left = dot.left + dot.width / 2 - bounds.left - routeInfo.offsetWidth / 2;
+      routeInfo.style.left = Math.max(12, Math.min(left, bounds.width - routeInfo.offsetWidth - 12)) + "px";
+      var top = dot.top - bounds.top - routeInfo.offsetHeight - 24;
+      routeInfo.style.top = (top < 8 ? dot.bottom - bounds.top + 20 : top) + "px";
+    }
+    function hideRouteInfo() {
+      var focused = document.activeElement;
+      if (focused && focused.matches("[data-route-station]")) { showRouteInfo(focused); return; }
+      activeStation = null;
+      routeInfo.hidden = true;
+    }
+    $$("[data-route-station]", routeMap).forEach(function (station) {
+      station.addEventListener("mouseenter", function () { showRouteInfo(station); });
+      station.addEventListener("mouseleave", function () { routeHideTimer = setTimeout(hideRouteInfo, 160); });
+      station.addEventListener("focus", function () { showRouteInfo(station); });
+      station.addEventListener("blur", function () { activeStation = null; routeInfo.hidden = true; });
+    });
+    routeInfo.addEventListener("mouseenter", function () { clearTimeout(routeHideTimer); });
+    routeInfo.addEventListener("mouseleave", hideRouteInfo);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { clearTimeout(routeHideTimer); activeStation = null; routeInfo.hidden = true; }
+    });
+    $(".route-map__scroll", routeMap).addEventListener("scroll", function () {
+      if (activeStation) showRouteInfo(activeStation);
+    }, { passive: true });
+    window.addEventListener("resize", function () { if (activeStation) showRouteInfo(activeStation); });
+  }
   var pgrid = $("[data-project-grid]");
   if (pgrid) {
     setupFilter($("[data-project-filter]"), $$(".pcard", pgrid), "region", function (el, val) {
@@ -180,6 +221,13 @@
         var val = chip.dataset[key];
         chips.forEach(function (c) { var on = c === chip; c.classList.toggle("is-on", on); c.setAttribute("aria-pressed", String(on)); });
         items.forEach(function (el) { apply(el, val); });
+        if (key === "region" && routeSvg) {
+          if (val === "all") routeSvg.removeAttribute("data-selected");
+          else routeSvg.setAttribute("data-selected", val);
+          $$("[data-route-country]", routeSvg).forEach(function (line) {
+            line.classList.toggle("is-selected", line.dataset.routeCountry === val);
+          });
+        }
       });
     });
   }

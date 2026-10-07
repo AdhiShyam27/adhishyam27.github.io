@@ -13,6 +13,7 @@ lede: Fourteen master planning and urban design projects from RSP Architects, fo
       {% include tag.html n="A" label="Master planning & urban design" %}
       <h2 class="h2 rv-mask" id="planning-title"><span>Planning <em class="serif">projects.</em></span></h2>
     </div>
+    {% include work/route-map.html %}
     <div class="chips chips--filter" role="group" aria-label="Filter projects by country" data-project-filter>
       <button type="button" class="chip is-on" aria-pressed="true" data-region="all">All</button>
       <button type="button" class="chip" aria-pressed="false" data-region="UAE">UAE</button>
