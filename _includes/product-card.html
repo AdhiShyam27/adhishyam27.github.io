@@ -3,7 +3,7 @@
   {% if pr.photos %}
   <a class="product__media" href="{{ '/work/' | append: pr.id | append: '/' | relative_url }}" aria-label="{{ pr.title }} case study">
     <img src="{{ '/assets/img/products/' | append: pr.id | append: '/01-sm.webp' | relative_url }}" alt="{{ pr.photos[0] }}" width="720" height="460" loading="lazy" decoding="async">
-    <span class="product__badge mono">Live product &middot; photos</span>
+    <span class="product__badge mono">{% if pr.badge %}{{ pr.badge | escape }}{% else %}Live product &middot; photos{% endif %}</span>
   </a>
   {% else %}
   {% include product-ui.html ui=pr.ui %}

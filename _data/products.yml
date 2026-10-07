@@ -120,6 +120,7 @@
   ui: spatial
 
 - id: ai-task-force
+  badge: Demo renders
   index: "04"
   title: AI Task Force
   kicker: Internal program · RSP
