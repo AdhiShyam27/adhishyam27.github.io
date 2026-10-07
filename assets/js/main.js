@@ -227,5 +227,19 @@
     });
   }
 
+  /* Home hero: load the other slides after the page has loaded, then start the crossfade */
+  var slides = $("[data-slides]");
+  if (slides && !reduce) {
+    window.addEventListener("load", function () {
+      var rest = $$("img[data-src]", slides), left = rest.length;
+      if (!left) return;
+      rest.forEach(function (img) {
+        img.onload = img.onerror = function () { if (--left === 0) slides.classList.add("is-ready"); };
+        img.srcset = img.dataset.srcset;
+        img.src = img.dataset.src;
+      });
+    });
+  }
+
   onScroll();
 })();

@@ -35,22 +35,11 @@ lede: Fourteen master planning and urban design projects from RSP Architects, fo
     <div class="section__head">
       {% include tag.html n="B" label="AI products at RSP" %}
       <h2 class="h2 rv-mask" id="ai-title"><span>Products I <em class="serif">shipped.</em></span></h2>
-      <p class="section__lede rv">Product work at RSP Architects, 2022 to 2025. The interfaces below are illustrations, not screenshots.</p>
+      <p class="section__lede rv">Product work at RSP Architects. Peggie and AIVA have full stories with photos; the other two cards use illustrative interfaces, not screenshots.</p>
     </div>
     <ul class="products">
       {% for pr in site.data.products %}
-      <li class="product rv" style="--i: {{ forloop.index }}" id="{{ pr.id }}">
-        {% include product-ui.html ui=pr.ui %}
-        <div class="product__body">
-          <p class="mono product__kicker">{{ pr.index }} &middot; {{ pr.kicker }}</p>
-          <h3 class="product__title">{{ pr.title }}</h3>
-          <p class="product__stat"><span class="product__num">{{ pr.stat }}</span> <span class="product__statlabel">{{ pr.stat_label }}</span></p>
-          <p class="product__desc">{{ pr.description }}</p>
-          <ul class="feature-list">
-            {% for f in pr.features %}<li>{{ f }}</li>{% endfor %}
-          </ul>
-        </div>
-      </li>
+      {% include product-card.html product=pr i=forloop.index features="yes" %}
       {% endfor %}
     </ul>
   </div>

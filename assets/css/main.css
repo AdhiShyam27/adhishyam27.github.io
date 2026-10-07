@@ -171,7 +171,8 @@ main:focus { outline: none; }
 .hero__intro { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink-2); max-width: 46ch; margin-top: 28px; }
 .hero__media { position: relative; }
 .hero__slides { position: relative; aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden; background: var(--soft); box-shadow: var(--shadow); }
-.hero__slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: heroFade 24s infinite; animation-delay: calc(var(--n) * 6s); }
+.hero__slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+.hero__slides.is-ready .hero__slide { animation: heroFade 24s infinite; animation-delay: calc(var(--n) * 6s); }
 .hero__slide:first-child { opacity: 1; }
 @keyframes heroFade {
   0% { opacity: 0; transform: scale(1.06); }
@@ -543,3 +544,14 @@ main:focus { outline: none; }
   .hero__slide:first-child { opacity: 1; }
   .ticker__track { animation: none !important; }
 }
+
+/* ---------- 20. Product photos and product pages ---------- */
+.product__media { position: relative; display: block; margin: 18px 18px 0; border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 10; background: var(--soft); }
+.product__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.product__media:hover img, .product__media:focus-visible img { transform: scale(1.05); }
+.product__badge { position: absolute; left: 12px; bottom: 12px; padding: 6px 12px; border-radius: 999px; background: rgba(13, 13, 13, 0.82); color: #fff; font-size: 0.62rem; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.product__more { margin: 16px 0 0; }
+.gallery__cap { margin: 10px 4px 0; font-size: 0.9rem; color: var(--mute); }
+.case__role-title { color: var(--mute); margin: 28px 0 8px; font-weight: 500; letter-spacing: 0.04em; }
+.case__role { font-size: 1.15rem; color: var(--ink); font-weight: 500; }
+.facts__stat dd { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }

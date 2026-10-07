@@ -1,4 +1,6 @@
-# AI products from my time at RSP. Text comes from my resume.
+# AI products from my time at RSP.
+# Text comes from my resume and from RSP's own press articles (linked as "press").
+# Photos: folder assets/img/products/<id>/, numbered 01, 02, ... (01 is the main photo).
 - id: peggie
   index: "01"
   title: Peggie
@@ -6,35 +8,117 @@
   description: Scoped, launched, and iterated with engineers and designers for SingPost.
   stat: "70%+"
   stat_label: adoption in 3 months
+  where: POPStop, Tampines MRT, Singapore
+  partners: SingPost (Singapore Post)
+  story:
+    - >-
+      Singapore's first AI concierge, launched by RSP with SingPost, Singapore's
+      largest postal service provider. Located at the POPStop at Tampines MRT, the
+      first POPStop e-commerce pick-up and drop-off point for SingPost.
+    - >-
+      Customers are greeted by a generative AI service assistant named Peggie on a
+      large vertical screen. Peggie answers FAQs and general questions and helps
+      customers buy and print labels for their parcels.
+    - >-
+      The collaboration set out to build an AI solution that helps consumer-facing
+      businesses like SingPost with manpower constraints and high volumes of
+      customer queries.
+  my_role: >-
+    Scoped, launched, and iterated with engineers and designers for SingPost;
+    achieved 70%+ adoption in 3 months.
+  press: https://rsp.design/rsp-collaborates-with-singpost-to-launch-singapores-first-ai-concierge/
+  photos:
+    - With Peggie at the POPStop, Tampines MRT
+    - A visitor trying Peggie's Buy Labels and General Enquiries options
+    - Group photo with Peggie at the POPStop
+    - The POPStop storefront at Tampines MRT
   features:
-    - Scoped with the client
-    - Built with engineers and designers
-    - Launched and iterated
+    - Answers FAQs and general questions
+    - Helps buy and print parcel labels
+    - Generative AI digital human on a vertical kiosk
   ui: chat
+
 - id: aiva
   index: "02"
   title: AIVA
-  kicker: Transport concierge · SBS Transit pilot
+  kicker: Transport concierge · SBS Transit
   description: Led commuter research (200+ interviews) to define requirements; piloted with SBS Transit, earning 80%+ satisfaction and citywide deployment interest.
   stat: "80%+"
   stat_label: pilot satisfaction
+  date_label: Announced 31 May 2024
+  where: SBS Transit bus interchanges and MRT stations, Singapore
+  partners: SBS Transit, Samadhi Ventures, Pantheon Lab
+  story:
+    - >-
+      AIVA (Artificial Intelligence Virtual Assistant) is an AI digital human
+      concierge designed to improve the customer experience at SBS Transit's bus
+      interchanges and MRT stations, built by RSP with SBS Transit, Samadhi
+      Ventures and Pantheon Lab.
+    - >-
+      It was announced on 31 May 2024 at the launch of SBS Transit's Mobility
+      Innovation Centre (MINNOVA), where RSP signed a Memorandum of Understanding
+      with SBS Transit to develop an intelligent avatar for better customer
+      experience at transport nodes.
+    - >-
+      AIVA's speech is powered by generative AI. It talks with passengers at
+      digital kiosks and gives travel information such as travel card help,
+      wayfinding maps and bus arrival times. It was trialled at Ang Mo Kio Bus
+      Interchange from June 2024, with a second kiosk planned for Bayfront Station
+      on the Downtown Line.
+  my_role: >-
+    Led commuter research (200+ interviews) to define requirements; piloted with
+    SBS Transit, earning 80%+ satisfaction and citywide deployment interest.
+  press: https://rsp.design/rsp-signs-mou-with-sbs-transit-and-launch-ai-concierge-aiva/
+  photos:
+    - With the AIVA kiosk, January 2025
+    - Talking to AIVA at an SBS Transit kiosk
+    - "With Mark Ong, Vice President, Strategic Development, and Beh Swee Chiew, CEO, RSP, beside AIVA"
+    - AIVA at the launch of SBS Transit's Mobility Innovation Centre (MINNOVA), 31 May 2024
+    - "Jeffrey Sim, SBS Transit, and Beh Swee Chiew, RSP, sign the MOU, 31 May 2024"
   features:
     - 200+ commuter interviews
-    - Requirements from research
-    - Piloted with SBS Transit
+    - Travel card help, wayfinding and bus arrival times
+    - Trialled at Ang Mo Kio Bus Interchange
   ui: transit
+
 - id: meta-office
   index: "03"
   title: RSP Meta Office
-  kicker: Metaverse lab · RSP
+  kicker: Metaverse lab · RSP META
   description: Pitched, built, and shipped the firm's first metaverse lab; cut modeling time 25% and grew revenue 15% within 2 months.
   stat: "25%"
   stat_label: less modeling time
+  where: Decentraland, Virtual Reality Shopping (VRS) district
+  partners: Octava and ARC; builder partner of The Sandbox
+  story:
+    - >-
+      RSP META (Space+) is RSP's first metaverse venture, created to push the
+      architectural practice beyond the bounds of the physical world. It brings
+      together a multi-disciplinary team of game developers, master planners,
+      experience designers and architects.
+    - >-
+      RSP deployed a virtual office in Decentraland's Virtual Reality Shopping (VRS)
+      district to meet and greet clients interested in developing virtual plots and
+      metaverse architecture. The Decentraland gallery features a floating NFT art
+      gallery nexus with an infinity helix platform and a "breathing skin" façade.
+    - >-
+      In September 2022, RSP became the first large architecture practice in the
+      world to register with The Sandbox as an officially recognised builder
+      partner, under its Creators for Hire program.
+  my_role: >-
+    Pitched, built, and shipped the firm's first metaverse lab; cut modeling time
+    25% and grew revenue 15% within 2 months.
+  press: https://rsp.design/rsp-officially-announce-first-metaverse-venture-with-rsp-meta/
+  video: https://www.youtube.com/watch?v=g2u-XvGx1OA
+  photos:
+    - VR demo session at RSP
+    - VR demo session at RSP, with the design on the big screen
   features:
-    - Pitched internally
-    - Built and shipped
+    - Virtual office in Decentraland
+    - Builder partner of The Sandbox
     - Revenue up 15% in 2 months
   ui: spatial
+
 - id: ai-task-force
   index: "04"
   title: AI Task Force

@@ -1,0 +1,23 @@
+{% assign pr = include.product %}
+<li class="product rv" style="--i: {{ include.i }}" id="{{ pr.id }}">
+  {% if pr.photos %}
+  <a class="product__media" href="{{ '/work/' | append: pr.id | append: '/' | relative_url }}" aria-label="{{ pr.title }} case study">
+    <img src="{{ '/assets/img/products/' | append: pr.id | append: '/01-sm.webp' | relative_url }}" alt="{{ pr.photos[0] }}" width="720" height="460" loading="lazy" decoding="async">
+    <span class="product__badge mono">Live product &middot; photos</span>
+  </a>
+  {% else %}
+  {% include product-ui.html ui=pr.ui %}
+  {% endif %}
+  <div class="product__body">
+    <p class="mono product__kicker">{{ pr.index }} &middot; {{ pr.kicker }}</p>
+    <h3 class="product__title">{{ pr.title }}</h3>
+    <p class="product__stat"><span class="product__num">{{ pr.stat }}</span> <span class="product__statlabel">{{ pr.stat_label }}</span></p>
+    <p class="product__desc">{{ pr.description }}</p>
+    {% if include.features == "yes" %}
+    <ul class="feature-list">
+      {% for f in pr.features %}<li>{{ f }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if pr.photos %}<p class="product__more"><a class="link-arrow" href="{{ '/work/' | append: pr.id | append: '/' | relative_url }}">See the {{ pr.title }} story &rarr;</a></p>{% endif %}
+  </div>
+</li>

@@ -16,9 +16,15 @@
       </div>
     </div>
     <div class="hero__media" data-hero-media>
-      <div class="hero__slides">
+      <div class="hero__slides" data-slides>
         {% for img in page.hero_images %}
-        <img class="hero__slide" src="{{ '/assets/img/projects/' | append: img.folder | append: '/01-sm.webp' | relative_url }}" srcset="{{ '/assets/img/projects/' | append: img.folder | append: '/01-sm.webp' | relative_url }} 720w, {{ '/assets/img/projects/' | append: img.folder | append: '/01.webp' | relative_url }} 1100w" sizes="(min-width: 900px) 46vw, 100vw" alt="{{ img.alt }}" width="720" height="900" style="--n: {{ forloop.index0 }}"{% if forloop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+        {% assign sm = '/assets/img/projects/' | append: img.folder | append: '/01-sm.webp' | relative_url %}
+        {% assign lg = '/assets/img/projects/' | append: img.folder | append: '/01.webp' | relative_url %}
+        {% if forloop.first %}
+        <img class="hero__slide" src="{{ sm }}" srcset="{{ sm }} 720w, {{ lg }} 1100w" sizes="(min-width: 900px) 46vw, 100vw" alt="{{ img.alt }}" width="720" height="900" style="--n: {{ forloop.index0 }}" fetchpriority="high" decoding="async">
+        {% else %}
+        <img class="hero__slide" data-src="{{ sm }}" data-srcset="{{ sm }} 720w, {{ lg }} 1100w" sizes="(min-width: 900px) 46vw, 100vw" alt="{{ img.alt }}" width="720" height="900" style="--n: {{ forloop.index0 }}" decoding="async">
+        {% endif %}
         {% endfor %}
       </div>
       <p class="hero__caption mono" aria-hidden="true"><span class="dot"></span> Selected work at RSP Architects</p>

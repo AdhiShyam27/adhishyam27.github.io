@@ -1,0 +1,56 @@
+---
+layout: default
+---
+{% assign pr = site.data.products | where: "id", page.product | first %}
+{% assign base = '/assets/img/products/' | append: pr.id %}
+<article class="case">
+  <header class="case__hero">
+    <img class="case__hero-img" src="{{ base | append: '/01.webp' | relative_url }}" srcset="{{ base | append: '/01-sm.webp' | relative_url }} 720w, {{ base | append: '/01.webp' | relative_url }} 1400w" sizes="100vw" alt="{{ pr.photos[0] }}" width="1400" height="900" fetchpriority="high">
+    <div class="case__hero-shade" aria-hidden="true"></div>
+    <div class="wrap case__hero-text">
+      <p class="tag mono tag--light"><a href="{{ '/work/' | relative_url }}#ai-products">AI products</a> / {{ pr.kicker }}</p>
+      <h1 class="case__title">{{ pr.title }}</h1>
+      <p class="case__loc">{{ pr.where }}</p>
+    </div>
+  </header>
+
+  <div class="wrap case__grid">
+    <dl class="facts rv">
+      <div class="facts__stat"><dt class="mono">{{ pr.stat_label }}</dt><dd>{{ pr.stat }}</dd></div>
+      {% if pr.date_label %}<div><dt class="mono">Date</dt><dd>{{ pr.date_label }}</dd></div>{% endif %}
+      <div><dt class="mono">Where</dt><dd>{{ pr.where }}</dd></div>
+      {% if pr.partners %}<div><dt class="mono">With</dt><dd>{{ pr.partners }}</dd></div>{% endif %}
+      <div><dt class="mono">Firm</dt><dd>RSP Architects Planners &amp; Engineers</dd></div>
+      <div><dt class="mono">Press</dt><dd><a href="{{ pr.press }}">Read RSP's article &nearr;</a></dd></div>
+      {% if pr.video %}<div><dt class="mono">Video</dt><dd><a href="{{ pr.video }}">Watch on YouTube &nearr;</a></dd></div>{% endif %}
+    </dl>
+    <div class="case__body prose rv">
+      {% for para in pr.story %}<p>{{ para }}</p>{% endfor %}
+      <h2 class="mono case__role-title">My role</h2>
+      <p class="case__role">{{ pr.my_role }}</p>
+      <ul class="feature-list">
+        {% for f in pr.features %}<li>{{ f }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <section class="wrap gallery" aria-label="{{ pr.title }} photos">
+    <ul class="gallery__grid">
+      {% for cap in pr.photos %}
+      {% assign n = forloop.index | prepend: '0' | slice: -2, 2 %}
+      <li class="gallery__item rv{% if forloop.first %} gallery__item--wide{% endif %}" style="--i: {{ forloop.index }}">
+        <a href="{{ base | append: '/' | append: n | append: '.webp' | relative_url }}" data-lightbox-src data-caption="{{ cap }}">
+          <img src="{{ base | append: '/' | append: n | append: '-sm.webp' | relative_url }}" alt="{{ cap }}" width="720" height="480" loading="lazy" decoding="async">
+        </a>
+        <p class="gallery__cap">{{ cap }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="mono credit">Select a photo to enlarge.</p>
+  </section>
+
+  <nav class="wrap case__pager" aria-label="More products">
+    <a class="pager pager--prev" href="{{ page.prev_url | relative_url }}"><span class="mono">&larr; {{ page.prev_label }}</span>{{ page.prev_title }}</a>
+    <a class="pager pager--next" href="{{ page.next_url | relative_url }}"><span class="mono">{{ page.next_label }} &rarr;</span>{{ page.next_title }}</a>
+  </nav>
+</article>
