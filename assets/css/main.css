@@ -565,3 +565,31 @@ main:focus { outline: none; }
 .case__role { font-size: 1.15rem; color: var(--ink); font-weight: 500; }
 .facts__stat dd { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
 .case__hero--screenshot .case__hero-img { filter: blur(3px) brightness(0.55); transform: scale(1.04); animation: none; }
+
+/* ---------- 21. Work: design process ---------- */
+#design-process .process__stages { margin-bottom: clamp(32px, 5vw, 56px); }
+#design-process .process__stages li { border-color: var(--line); background: var(--soft); }
+#design-process .process__group + .process__group { margin-top: clamp(36px, 5vw, 64px); }
+#design-process .process__label { color: var(--mute); font-weight: 500; line-height: 1.6; overflow-wrap: anywhere; }
+#design-process .process__caption { color: var(--ink-2); margin: 8px 0 18px; font-size: 0.95rem; }
+#design-process .process__grid {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px;
+  min-width: 0; max-width: 100%; overflow-x: auto;
+  scroll-snap-type: x mandatory; scroll-padding-inline: 4px;
+  overscroll-behavior-x: contain; scrollbar-width: thin;
+  padding: 4px 4px 16px;
+}
+#design-process .process__image {
+  display: block; min-width: 0; scroll-snap-align: start;
+  border-radius: 18px; background: var(--soft); box-shadow: var(--hair);
+}
+#design-process .process__image img {
+  width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; border-radius: inherit;
+}
+@media (min-width: 900px) {
+  #design-process .process__grid {
+    grid-auto-flow: row; grid-auto-columns: auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: visible; scroll-snap-type: none; padding-bottom: 4px;
+  }
+}
